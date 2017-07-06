@@ -1,0 +1,78 @@
+package Java_4_2;
+
+public class Characteristic {
+
+    private String name;
+    private int weight;
+    private double price;
+    private String description;
+
+    public Characteristic (String name,int weight,double price,String description) {
+        this.name = name;
+        this.weight = weight;
+        this.price = price;
+        this.description = description;
+    }
+
+    public String getName () {
+        return name;
+    }
+
+    public int getWeight () {
+        return weight;
+    }
+
+    public double getPrice () {
+        return price;
+    }
+
+    public void setName (String name) {
+        this.name = name;
+    }
+
+    public void setWeight (int weight) {
+        this.weight = weight;
+    }
+
+    public void setPrice (double price) {
+        this.price = price;
+    }
+
+    public void setDescription (String description) {
+        this.description = description;
+    }
+
+    public String getDescription () {
+        return description;
+    }
+
+    @Override
+    public String toString () {
+        return "name='" + name +
+                ", weight=" + weight +
+                ", price=" + price +
+                ", description='" + description;
+    }
+} 
+
+
+
+package Java_4_2;
+
+public class ChristmasPresent {
+
+    public static void main (String args[]) throws InterruptedException {
+
+        Characteristic сandy = new Characteristic ("Candy",6,12.50,"Конфета");
+        Characteristic оellybean = new Characteristic ("Jellybean,",5,18.90,"Мармеладки");
+        Characteristic сhocolate = new Characteristic ("Сhocolate",4,7.20,"Шоколадка");
+
+        System.out.println ("Общий вес подарка: " + (сandy.getWeight () + оellybean.getWeight () + сhocolate.getWeight ()));
+        System.out.println ("Общая стоимость подарка: " + (сandy.getPrice () + оellybean.getPrice () + сhocolate.getPrice ()));
+
+        Characteristic[] present = {сandy,оellybean,сhocolate};
+        for (int i = 0; i < present.length; i++) {
+            System.out.println (present[i]);
+        }
+    }
+}
