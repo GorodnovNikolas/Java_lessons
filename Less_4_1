@@ -1,18 +1,28 @@
 import java.util.Random;
 
 public class Less_4_1 {
+
+//а где элементы массива местами меняются?
     public static void main (String args[]) {
 
+//генерацию тоже лучше вынести в отдельный метод, например genetareArrayOfRandomIntegerNumbers. 
+//еще хорошо бы организовать проверку на то, не одно ли знака получились числа в массива. если одного, то нечего местами менять. 
         int[] array = new int[20];
         Random random = new Random ();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt (41) - 20;
             System.out.println (array[i]);
         }
+        
+        //можно использовать minPositive = maxValueInArray + 1 и maxNegative = 0;
         int max = - 999999;
         int min = 999999;
         int indMax = 0;
         int indMin = 0;
+        
+        //это просто поиск минимального и максимального элемента. минимальный положительный элемент из набора [3,2,10]  - это 2
+        //лучше поиск разбить на два метода, например getIndexOfMaxNegativeElement, getIndexOfMinPositiveElement
+        
         for (int i = 0; i < array.length; i++) {
             System.out.println ("i " + array[i] + "     " + i);
             if (array[i] < 0) {

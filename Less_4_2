@@ -1,5 +1,8 @@
 package Java_4_2;
 
+//Characteristic не говорит о том, что от этого классы могут сладости наследоваться. Лучше назвать более конкретно, Sweet хотя бы
+//и кстати, если у Candy будет дополнительно начинка, а у Jellybean нет, как в таком случае организовать составление подарка.
+//конкретные сладости должны наследоваться от общей абстрактной и добалять свои особенности к базовым weight и price
 public class Characteristic {
 
     private String name;
@@ -67,6 +70,8 @@ public class ChristmasPresent {
         Characteristic оellybean = new Characteristic ("Jellybean,",5,18.90,"Мармеладки");
         Characteristic сhocolate = new Characteristic ("Сhocolate",4,7.20,"Шоколадка");
 
+//а если подарок будет состоять из 100 сладостей, все в строчку писать?)  
+//сладости хорошо бы сразу в массив собирать, а потом в цикле по нему проходить и собирать нужные свойства
         System.out.println ("Общий вес подарка: " + (сandy.getWeight () + оellybean.getWeight () + сhocolate.getWeight ()));
         System.out.println ("Общая стоимость подарка: " + (сandy.getPrice () + оellybean.getPrice () + сhocolate.getPrice ()));
 

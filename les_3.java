@@ -22,7 +22,7 @@ public class les_3 {
              array[i] = scanner.next();
          }
          int maxLength = 0;
-         for(int i = 0; array.length > i; i++){
+         for(int i = 0; array.length > i; i++){ //немного режет глаза) обычно указывают  i < array.length;
              if(array[i].length() > maxLength) {
                  maxLength = array[i].length();
              }
@@ -47,7 +47,7 @@ public class les_3 {
              System.out.println("= " + (x * y));
          }
          if (z.equals("/")) {
-             System.out.println("= " + (x / y));
+             System.out.println("= " + (x / y)); //а если y равен 0?
          }
          if (z.equals("+")) {
              System.out.println("= " + (x + y));
@@ -56,6 +56,6 @@ public class les_3 {
              System.out.println("= " + (x - y));
          }
      }
-     }
+     }// а если 3 или другое значение?
     }
 
