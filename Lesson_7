@@ -1,0 +1,28 @@
+package Collections;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+public class WordStatistic {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File("D:\\file.txt"));
+        SortedMap<String, Integer> statistics = new TreeMap <> ();
+
+        int s = 0;
+        String word;
+        Integer count;
+        while (scanner.hasNext()) {
+            word = scanner.useDelimiter ("\\s+").next();
+                     count = statistics.get(word);
+            if (count == null) {
+                count = 0;
+            }
+            statistics.put(word, ++count);
+            s = count;
+        }
+        String maxKey = Collections.max (statistics.entrySet (),Map.Entry.comparingByValue ()).getKey ();
+
+        System.out.println( "Пересчитанные и отсортированные в алфавитном порядке слова: "+statistics);
+        System.out.println("Слово с максимальным количеством повторений: "+ maxKey);
+        System.out.println("Это стово повторяется " +s+ " раз");
+    }}
