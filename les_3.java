@@ -60,11 +60,11 @@
                     System.out.println("= " + (x - y));
                 }
                 else
-                    System.out.println("Знак введен не правильно");
+                    System.out.println("Знак введен неправильно");
 
             }
             else
-                System.out.println("Число введено не правильно");
+                System.out.println("Число введено неправильно");
         }
     }
 
